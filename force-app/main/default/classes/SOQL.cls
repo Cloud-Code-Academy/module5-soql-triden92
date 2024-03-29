@@ -318,7 +318,7 @@ public with sharing class SOQL {
         String state = acc.BillingState;
         System.debug(state);
         // Query the Contacts
-        List<Contact> contactList = [SELECT Id, Name, MailingState,Account, Account.Name, Account.BillingState, FROM Contact WHERE MailingState = :state];
+        List<Contact> contactList = [SELECT Id, Name, MailingState,AccountId, Account.Name, Account.BillingState FROM Contact WHERE MailingState = :state];
         System.debug(contactList);
 
         return contactList; // Replace null with the variable you used to store the result
